@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Everestfcs</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c7cd5638-82fa-4db8-9ca4-bc5e88ca9fea}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Everestfcs</RootNamespace>
+    <AssemblyName>Everestfcs</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Sequences\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="HangFire\" />
+    <Folder Include="HangFire\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\LSRulePaymentModes.sql" />
+    <Build Include="dbo\Tables\LSRuleProducts.sql" />
+    <Build Include="dbo\Tables\LSRuleStations.sql" />
+    <Build Include="dbo\Tables\LSRuleTimes.sql" />
+    <Build Include="dbo\Tables\LTransactionTypes.sql" />
+    <Build Include="dbo\Tables\Communicationtemplates.sql" />
+    <Build Include="dbo\Tables\Paymentmodes.sql" />
+    <Build Include="dbo\Tables\Paymentmodetypes.sql" />
+    <Build Include="dbo\Tables\PostpaidOneOffAgreements.sql" />
+    <Build Include="dbo\Tables\LoyaltySettings.sql" />
+    <Build Include="dbo\Tables\PostpaidRecurentAgreements.sql" />
+    <Build Include="dbo\Tables\PriceList.sql" />
+    <Build Include="dbo\Tables\FinanceTransactions.sql" />
+    <Build Include="dbo\Tables\AccountEmployee.sql" />
+    <Build Include="dbo\Tables\AccountEquipments.sql" />
+    <Build Include="dbo\Tables\Productcategory.sql" />
+    <Build Include="dbo\Tables\AccountProducts.sql" />
+    <Build Include="dbo\Tables\ProductUoms.sql" />
+    <Build Include="dbo\Tables\AccountStations.sql" />
+    <Build Include="dbo\Tables\PumpNozzles.sql" />
+    <Build Include="dbo\Tables\AccountTransactionFrequency.sql" />
+    <Build Include="dbo\Tables\ReplacedCards.sql" />
+    <Build Include="dbo\Tables\AccountWeekDays.sql" />
+    <Build Include="dbo\Tables\Stationpumps.sql" />
+    <Build Include="dbo\Tables\AgreementTypes.sql" />
+    <Build Include="dbo\Tables\Stationtanks.sql" />
+    <Build Include="dbo\Tables\SystemProduct.sql" />
+    <Build Include="dbo\Tables\ChartofAccountPeriodBalances.sql" />
+    <Build Include="dbo\Tables\SystemAccountCards.sql" />
+    <Build Include="dbo\Tables\Systemcard.sql" />
+    <Build Include="dbo\Tables\ChartofAccounts.sql" />
+    <Build Include="dbo\Tables\Systemcardtype.sql" />
+    <Build Include="dbo\Tables\ChartofAccountsSubTypes.sql" />
+    <Build Include="dbo\Tables\SystemCountry.sql" />
+    <Build Include="dbo\Tables\ChartofAccountTypes.sql" />
+    <Build Include="dbo\Tables\CloseDays.sql" />
+    <Build Include="dbo\Tables\SystemPeriods.sql" />
+    <Build Include="dbo\Tables\CreditAgreements.sql" />
+    <Build Include="dbo\Tables\CreditInvoices.sql" />
+    <Build Include="dbo\Tables\CreditTypes.sql" />
+    <Build Include="dbo\Tables\SystemProductvariation.sql" />
+    <Build Include="dbo\Tables\PriceListprices.sql" />
+    <Build Include="dbo\Tables\CustomerAccount.sql" />
+    <Build Include="dbo\Tables\ConsumLimitType.sql" />
+    <Build Include="dbo\Tables\CustomerAccountTopups.sql" />
+    <Build Include="dbo\Tables\SystemTickets.sql" />
+    <Build Include="dbo\Tables\CustomerAgreements.sql" />
+    <Build Include="dbo\Tables\LnkGadgetsStation.sql" />
+    <Build Include="dbo\Tables\TicketlinePayments.sql" />
+    <Build Include="dbo\Tables\CustomerEmployees.sql" />
+    <Build Include="dbo\Tables\LnkStaffStation.sql" />
+    <Build Include="dbo\Tables\Stationshifts.sql" />
+    <Build Include="dbo\Tables\Ticketlines.sql" />
+    <Build Include="dbo\Tables\CustomerEquipments.sql" />
+    <Build Include="dbo\Tables\SystemGadgets.sql" />
+    <Build Include="dbo\Tables\CustomerPayments.sql" />
+    <Build Include="dbo\Tables\Customers.sql" />
+    <Build Include="dbo\Tables\SystemPhoneCodes.sql" />
+    <Build Include="dbo\Tables\CustomerVehicleUsages.sql" />
+    <Build Include="dbo\Tables\DiscountList.sql" />
+    <Build Include="dbo\Tables\SystemStations.sql" />
+    <Build Include="dbo\Tables\EmployeeProducts.sql" />
+    <Build Include="dbo\Tables\Tenantaccounts.sql" />
+    <Build Include="dbo\Tables\EmployeeStations.sql" />
+    <Build Include="dbo\Tables\EmployeeTransactionFrequency.sql" />
+    <Build Include="dbo\Tables\EmployeeWeekDays.sql" />
+    <Build Include="dbo\Tables\EquipmentMakes.sql" />
+    <Build Include="dbo\Tables\EquipmentModels.sql" />
+    <Build Include="dbo\Tables\EquipmentProducts.sql" />
+    <Build Include="dbo\Tables\EquipmentStations.sql" />
+    <Build Include="dbo\Tables\EquipmentTransactionFrequency.sql" />
+    <Build Include="dbo\Tables\EquipmentWeekDays.sql" />
+    <Build Include="dbo\Tables\FinanceTransactionSubTypes.sql" />
+    <Build Include="dbo\Tables\FinanceTransactionTypes.sql" />
+    <Build Include="dbo\Tables\GLTransactions.sql" />
+    <Build Include="dbo\Tables\LFormulaRules.sql" />
+    <Build Include="dbo\Tables\LFormulas.sql" />
+    <Build Include="dbo\Tables\LnkDiscountProducts.sql" />
+    <Build Include="dbo\Tables\LoyaltyGroupings.sql" />
+    <Build Include="dbo\Tables\LpoTransactions.sql" />
+    <Build Include="dbo\Tables\LRADataInputs.sql" />
+    <Build Include="dbo\Tables\LRConversionDataInputs.sql" />
+    <Build Include="dbo\Tables\LRewardGroups.sql" />
+    <Build Include="dbo\Tables\LRewards.sql" />
+    <Build Include="dbo\Tables\LRResults.sql" />
+    <Build Include="dbo\Tables\LSchemeRules.sql" />
+    <Build Include="dbo\Tables\LSchemes.sql" />
+    <Build Include="dbo\Tables\LSRuleDays.sql" />
+    <Build Include="dbo\Tables\LSRuleLoyaltyGrouping.sql" />
+    <Build Include="dbo\Views\VWFinanceTransactions.sql" />
+    <Build Include="dbo\Functions\fn_ToBase36.sql" />
+    <Build Include="dbo\Functions\getlocaldate.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStaffData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStationTankData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStaffRole.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemTenantCardsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStationData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RemoveTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ResetuserpasswordpostData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportAwardStatementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportCustomerPaymentData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportPointsAwardStatementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_UpdateSystemProductData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ValidateSystemCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ValidateSystemCustomeremployee.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemPriceListsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Adddicountlistvaluenewdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Addpricelistpricenewdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_CheckIfSaleTransactionQualify.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Editsystemdiscountlistdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Editsystempricelistdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountemployeefrequencypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetCustomerAccountEmployeepolicydataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountemployeeproductpolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountemployeeweekdaypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountequipmentfrequencypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountequipmentproductpolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountequipmentweekdaypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountfrequencypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetcustomeraccountproductpolicyDatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountstationpolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomeraccountweekdaypolicydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomerpostpaidcreditagreementdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomerprepaidagreementdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModelbycode.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedatabyname.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCompanyCustomerDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAccountEquipmentDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAgreementPaymentListData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemdiscountlistdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltyFormulaData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltyFormulaDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltyFormulaRuleDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltySchemeDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltySettingsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemPriceListDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemProductDetailDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemProductVariationData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemProductVariationDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystempumpdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStationProductData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemtankdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemTenantCardById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemTenantCardData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemTenantCardDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_PostReversePaymentTransactionData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_PostReverseSaleTransactionData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_PostReverseTopupTransactionData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAccountEmployeeData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAccountEquipmentData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEmployeeFrequencyPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEmployeeProductPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEmployeeStationPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEmployeeWeekdayPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEquipmentFrequencyPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEquipmentProductPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEquipmentStationPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountEquipmentWeekdayPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountFrequencyPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountProductPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountStationPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountTopupData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountTransferData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountWeekdayPolicyData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementPaymentData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerPostpaidCreditAgreementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerPostpaidOneOffAgreementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerPostpaidRecurrentAgreementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerPrepaidAgreementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registerformulaeditdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_DeactivateorDeleteTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterformulaRuleeditdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_DefaultThisTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterLoyaltyFormulaData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterLoyaltySetting.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModel.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSaleTransactionData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemGadgetsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterschemeandruleData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemGadgetsDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registerschemeeditdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemRoleDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registerschemeruleeditdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemRolesData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemcommunicationtemplatedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStaffData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemCustomerData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStaffStation.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemDiscountListData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStationDetailDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemPriceListData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStationListsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemProductData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemUserDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemGadgetsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStationPumpData.sql" />
+    <Build Include="dbo\Sequences\AccountNumberSequence.sql" />
+    <Build Include="dbo\Sequences\sq_PaymentTxnID.sql" />
+    <Build Include="dbo\Sequences\TransactionAutmationSequence.sql" />
+    <Build Include="dbo\Sequences\TransactionCodeSequence.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Everestfcsverifysystemuseremail.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Everestfcsverifysystemuser.sql" />
+    <Build Include="dbo\Tables\SystemStaffs.sql" />
+    <Build Include="dbo\Tables\Systemroles.sql" />
+    <Build Include="dbo\Tables\Systemroleperms.sql" />
+    <Build Include="dbo\Tables\Systempermissions.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterGeneralSetting.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStationallDetailDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltyschemeRuleDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemLoyaltySchemeData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemDiscountListsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Replacecustomeraccountcarddata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registertenantaccountdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemtenantaccountdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemtenantaccountbyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAgreementtopuptransferData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAgreementPriceListDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAgreementDiscountListData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAccountPolicyDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAccountEmployeePolicyDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerAccountCardDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getallofflinesalesdata.sql" />
+    <Build Include="dbo\Tables\SystemSuppliers.sql" />
+    <Build Include="dbo\Tables\ShiftVouchers.sql" />
+    <Build Include="dbo\Tables\ShiftsTankReadings.sql" />
+    <Build Include="dbo\Tables\ShiftsPumpReadings.sql" />
+    <Build Include="dbo\Tables\ShiftPurchasesItems.sql" />
+    <Build Include="dbo\Tables\ShiftPurchases.sql" />
+    <Build Include="dbo\Tables\ShiftLubeandLpg.sql" />
+    <Build Include="dbo\Tables\ShiftCreditInvoices.sql" />
+    <Build Include="dbo\Tables\RFIDCardSalesData.sql" />
+    <Build Include="dbo\Tables\Invoicesettlement.sql" />
+    <Build Include="dbo\Tables\DryStockMovement.sql" />
+    <Build Include="dbo\Tables\DryStockMainStore.sql" />
+    <Build Include="dbo\Tables\DiscountSalesData.sql" />
+    <Build Include="dbo\Tables\AutomationSalesData.sql" />
+    <Build Include="dbo\Tables\AutomatedStation.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportSalesTransactionsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportPrepaidCustomerStatementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportPostPaidCustomerStatementData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportCustomerTopupData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportCustomerRedeemData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportCustomerAwardsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportCumulativepointsData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemsuppliersdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationtankdipsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftvoucherdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationpurchasesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationcreditinvoicedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystempermissiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterCustomerAgreementAccountData_1.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ProcessAutomationsalesData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetTransactionRecieptDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemsupplierslistdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemsupplierdetailbyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStatonStatementDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationtankdetaildatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftlistdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftdetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftdatabyshiftid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationsalesummarydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationpurchaseummarydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationpurchasesdetaildatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemStaffUserDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystempermissiondatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystempermissiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemloyaltysettingsdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetsystemdryproductpricedatabyId.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemDashboardDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcreditinvoicesaledatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsinglesystemstationshiftdetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModelbycodeandtenant.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModelbycodeandsearchparam.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getcustomercardbycardcode.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetCustomerAccountDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getautomatedsystemstationsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getallsystemloyaltysettingsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Automatesystemstationdata.sql" />
+    <Build Include="dbo\Tables\SystemProductvariation_1.sql" />
+    <Build Include="dbo\Tables\SystemSuplierPrice.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetsystemproductpricevatbyId.sql" />
+    <Build Include="dbo\Tables\ShiftTopup.sql" />
+    <Build Include="dbo\Tables\ShiftPayment.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Supervisorclosesystemstationshiftdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Savetransfertoaccessoriesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportStationShiftSales.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftTankReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftSummaryReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftpurchasesReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftPumpReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftLpgLubesReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftExpenses.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftCustomerStatementReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftCreditSalesReading.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ReportShiftCashDrops.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftwetstockpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshifttopupdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshifttankdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftsparepartdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftpumpdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftpaymentdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftmpesadata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftmerchantdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftlubedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftlpgdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftfuelcarddata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftexpensedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftdrystockpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftcreditinvoicedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstationshiftcarwashdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationtankshiftpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftwetstockpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshifttopupdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftpaymentdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftmpesacollectiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftmerchantdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftfuelcardcollectiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftexpensesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftdrystockpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationshiftcreditinvoicedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationproductpricedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstationdryproductshiftpurchasedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductmainstoredata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Closesystemstationshiftdata.sql" />
+  </ItemGroup>
+</Project>

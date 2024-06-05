@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[CustomerPayments] (
+    [CustomerPaymentId]    BIGINT          IDENTITY (1, 1) NOT NULL,
+    [AgreementId]          BIGINT          NOT NULL,
+    [PaymentModeId]        BIGINT          NOT NULL,
+    [FinanceTransactionId] BIGINT          NOT NULL,
+    [Amount]               DECIMAL (34, 2) NOT NULL,
+    [TransactionReference] NVARCHAR (100)  NULL,
+    [TransactionDate]      DATETIME        NOT NULL,
+    [IsPaymentValidated]   BIT             DEFAULT ((1)) NOT NULL,
+    [ChequeNo]             NVARCHAR (30)   NULL,
+    [ChequeDate]           DATETIME        NULL,
+    [Memo]                 NVARCHAR (100)  NULL,
+    [DrawerBank]           NVARCHAR (30)   NULL,
+    [DepositBank]          NVARCHAR (30)   NULL,
+    [Isactive]             BIT             DEFAULT ((1)) NOT NULL,
+    [Isdeleted]            BIT             DEFAULT ((0)) NOT NULL,
+    [PaidBy]               BIGINT          NULL,
+    [SlipReference]        NVARCHAR (30)   NULL,
+    [Provider]             NVARCHAR (100)  NULL,
+    [CreatedBy]            BIGINT          NOT NULL,
+    [DateCreated]          DATETIME        NOT NULL,
+    CONSTRAINT [PK_dbo.CustomerPayments] PRIMARY KEY CLUSTERED ([CustomerPaymentId] ASC),
+    CONSTRAINT [FK_dbo.CustomerPayments_dbo.CustomerAgreements_AgreementId] FOREIGN KEY ([AgreementId]) REFERENCES [dbo].[CustomerAgreements] ([AgreementId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_dbo.CustomerPayments_dbo.FinanceTransactions_FinanceTransactionId] FOREIGN KEY ([FinanceTransactionId]) REFERENCES [dbo].[FinanceTransactions] ([FinanceTransactionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_dbo.CustomerPayments_dbo.PaymentModes_PaymentModeId] FOREIGN KEY ([PaymentModeId]) REFERENCES [dbo].[Paymentmodes] ([PaymentmodeId]) ON DELETE CASCADE
+);
+

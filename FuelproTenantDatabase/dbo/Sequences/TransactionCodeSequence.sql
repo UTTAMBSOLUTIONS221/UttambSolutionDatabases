@@ -1,0 +1,5 @@
+﻿CREATE SEQUENCE [dbo].[TransactionCodeSequence]
+    AS BIGINT
+    START WITH 111111100
+    INCREMENT BY 1;
+

@@ -1,0 +1,5 @@
+﻿CREATE SEQUENCE [dbo].[AccountNumberSequence]
+    AS BIGINT
+    START WITH 1111110
+    INCREMENT BY 1;
+

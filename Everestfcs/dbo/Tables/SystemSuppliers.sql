@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[SystemSuppliers] (
+    [SupplierId]    BIGINT        IDENTITY (1, 1) NOT NULL,
+    [TenantId]      BIGINT        NOT NULL,
+    [SupplierName]  VARCHAR (100) NOT NULL,
+    [SupplierEmail] VARCHAR (100) NOT NULL,
+    [PhoneId]       BIGINT        NOT NULL,
+    [PhoneNumber]   VARCHAR (100) NULL,
+    [Extra]         VARCHAR (100) NULL,
+    [Extra1]        VARCHAR (100) NULL,
+    [Extra2]        VARCHAR (100) NULL,
+    [Extra3]        VARCHAR (100) NULL,
+    [Extra4]        VARCHAR (100) NULL,
+    [Extra5]        VARCHAR (100) NULL,
+    [Extra6]        VARCHAR (100) NULL,
+    [Extra7]        VARCHAR (100) NULL,
+    [Extra8]        VARCHAR (100) NULL,
+    [Extra9]        VARCHAR (100) NULL,
+    [Extra10]       VARCHAR (100) NULL,
+    [Createdby]     BIGINT        NOT NULL,
+    [Modifiedby]    BIGINT        NOT NULL,
+    [Datemodified]  DATETIME      DEFAULT (getdate()) NOT NULL,
+    [Datecreated]   DATETIME      DEFAULT (getdate()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([SupplierId] ASC)
+);
+

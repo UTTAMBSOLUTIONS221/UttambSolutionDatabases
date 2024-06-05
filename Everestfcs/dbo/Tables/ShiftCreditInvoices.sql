@@ -1,0 +1,35 @@
+﻿CREATE TABLE [dbo].[ShiftCreditInvoices] (
+    [ShiftCreditInvoiceId] BIGINT          IDENTITY (1, 1) NOT NULL,
+    [ShiftId]              BIGINT          NOT NULL,
+    [AttendantId]          BIGINT          NOT NULL,
+    [CustomerId]           BIGINT          NOT NULL,
+    [EquipmentId]          BIGINT          NOT NULL,
+    [ProductVariationId]   BIGINT          NOT NULL,
+    [ProductUnits]         DECIMAL (18, 2) NOT NULL,
+    [ProductPrice]         DECIMAL (18, 2) NOT NULL,
+    [ProductDiscount]      DECIMAL (18, 2) NOT NULL,
+    [ProductTotal]         DECIMAL (18, 2) NOT NULL,
+    [VatTotal]             DECIMAL (18, 2) NOT NULL,
+    [OrderNumber]          VARCHAR (100)   NOT NULL,
+    [RecieptNumber]        VARCHAR (100)   NOT NULL,
+    [Reference]            VARCHAR (400)   NULL,
+    [Extra]                VARCHAR (100)   NULL,
+    [Extra1]               VARCHAR (100)   NULL,
+    [Extra2]               VARCHAR (100)   NULL,
+    [Extra3]               VARCHAR (100)   NULL,
+    [Extra4]               VARCHAR (100)   NULL,
+    [Extra5]               VARCHAR (100)   NULL,
+    [Extra6]               VARCHAR (100)   NULL,
+    [Extra7]               VARCHAR (100)   NULL,
+    [Extra8]               VARCHAR (100)   NULL,
+    [Extra9]               VARCHAR (100)   NULL,
+    [Extra10]              VARCHAR (100)   NULL,
+    [Createdby]            BIGINT          NOT NULL,
+    [Modifiedby]           BIGINT          NOT NULL,
+    [Datemodified]         DATETIME        NOT NULL,
+    [Datecreated]          DATETIME        NOT NULL,
+    PRIMARY KEY CLUSTERED ([ShiftCreditInvoiceId] ASC)
+);
+
+
+

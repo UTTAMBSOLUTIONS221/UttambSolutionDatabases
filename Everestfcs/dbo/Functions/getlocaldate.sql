@@ -1,0 +1,8 @@
+﻿CREATE FUNCTION [dbo].[getlocaldate](@TimeZoneOffset varchar(100))
+RETURNS DATETIME
+AS
+BEGIN
+    RETURN (
+        SELECT CONVERT(DATETIME, SWITCHOFFSET(CONVERT(DATETIMEOFFSET, GETDATE()), @TimeZoneOffset))
+    );
+END

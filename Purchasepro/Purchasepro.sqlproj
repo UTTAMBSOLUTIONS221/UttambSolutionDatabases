@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Purchasepro</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a3d1f832-267c-4867-8e52-45d85655eeea}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Purchasepro</RootNamespace>
+    <AssemblyName>Purchasepro</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Sequences\" />
+    <Folder Include="dbo\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Loanidaccountid.sql" />
+    <Build Include="dbo\Tables\Systemloanitempayments.sql" />
+    <Build Include="dbo\Tables\Systemphonecodes.sql" />
+    <Build Include="dbo\Tables\Systemstaffs.sql" />
+    <Build Include="dbo\Tables\Systemtenants.sql" />
+    <Build Include="dbo\Tables\Systemassets.sql" />
+    <Build Include="dbo\Tables\Systemcustomers.sql" />
+    <Build Include="dbo\Tables\Systemloandetail.sql" />
+    <Build Include="dbo\Tables\Systemassetdetail.sql" />
+    <Build Include="dbo\Tables\Systemloandetailitems.sql" />
+    <Build Include="dbo\Tables\Systemvehiclemakes.sql" />
+    <Build Include="dbo\Tables\Systemvehiclemodels.sql" />
+    <Build Include="dbo\Tables\Systemroles.sql" />
+    <Build Include="dbo\Tables\Systempermissions.sql" />
+    <Build Include="dbo\Tables\Systemroleperms.sql" />
+    <Build Include="dbo\Tables\CustomerAccount.sql" />
+    <Build Include="dbo\Tables\ChartofAccounts.sql" />
+    <Build Include="dbo\Tables\FinanceTransactions.sql" />
+    <Build Include="dbo\Tables\GLTransactions.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_DeactivateorDeleteTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemstaffdata.sql" />
+    <Build Include="dbo\Stored Procedures\CalculateEMI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcustomerdetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Payloaninvoiceitemdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Generatecustomerloanpaymentreport.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Verifysystemstaffs.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemtenantdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemtenantdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemtenantdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemcustomeruserdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemassetdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemassetsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemassetdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemrolesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstaffrole.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getlistmodel.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstaffsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstaffdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcustomerdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemcustomerdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcustomerdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemcustomerloandetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Resetuserpasswordpostdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystempermissiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystempermissiondatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystempermissiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemvehiclemodeldatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemvehiclemodeldata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemvehiclemodeldata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemvehiclemakedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemvehiclemakedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemvehiclemakedatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModelbycode.sql" />
+    <Build Include="dbo\Sequences\AccountNumberSequence.sql" />
+    <Build Include="dbo\Sequences\TransactionCodeSequence.sql" />
+    <Build Include="dbo\Tables\PaymentStatus.sql" />
+    <Build Include="dbo\Tables\Payments.sql" />
+    <Build Include="dbo\Tables\Mpesanotificationlogs.sql" />
+    <Build Include="dbo\Tables\Mpesaapiresponselogs.sql" />
+    <Build Include="dbo\Functions\fn_ToBase36.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Updatepayment3pstat.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_UpateB2CPayment.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegistermpesastkUpdatePayment3PStat.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registermpesastkapiresponselog.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registermpesanotificationlogs.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registermpesaapiresponselog.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ProcessExprCallback.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemroledetaildatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemCustomerExprSettings.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcustomerdetaildatabyassetnumber.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_CreateSystemPayment.sql" />
+    <Build Include="dbo\Sequences\sq_PaymentTxnID.sql" />
+  </ItemGroup>
+</Project>

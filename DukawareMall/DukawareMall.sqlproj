@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DukawareMall</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4cda6735-7d3b-40b5-94ec-172097d0405d}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DukawareMall</RootNamespace>
+    <AssemblyName>DukawareMall</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Productbrand.sql" />
+    <Build Include="dbo\Tables\Tenantproduct.sql" />
+    <Build Include="dbo\Tables\Systempermissions.sql" />
+    <Build Include="dbo\Tables\Systemshops.sql" />
+    <Build Include="dbo\Tables\Systemroles.sql" />
+    <Build Include="dbo\Tables\Systemroleperms.sql" />
+    <Build Include="dbo\Tables\SystemPhoneCodes.sql" />
+    <Build Include="dbo\Tables\Productuom.sql" />
+    <Build Include="dbo\Tables\Productcategory.sql" />
+    <Build Include="dbo\Tables\SystemCountry.sql" />
+    <Build Include="dbo\Tables\Systemstaffs.sql" />
+    <Build Include="dbo\Tables\Systemproduct.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModelbycode.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductbranddataid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductmanagementdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductuomdataid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductuomdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductcategorydataid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductcategorydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetListModel.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registertenantproductdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Gettenantproductdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemrolesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterSystemStaffRole.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemRoleDetailData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductbranddata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemshopstaffdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Gettenantproductdatabyshopid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstaffsdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registertenantproductstockdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Dukawaremallverifysystemstaffs.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductsubcategorydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getdukawaremallproductvariationdatabycategory.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getdukawaremallproductvariationdata.sql" />
+    <Build Include="dbo\Tables\Systemproductwhatsinbox.sql" />
+    <Build Include="dbo\Tables\Systemproductspecification.sql" />
+    <Build Include="dbo\Tables\Systemproductdescription.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Updatesystemproductimagedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductwhatsinboxdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductspecificationdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductdescriptiondata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductwhatsinboxdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductspecificationbyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductdescriptiondatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductdatadetailbyid.sql" />
+    <Build Include="dbo\Tables\SocialPesaFacebookPages.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetTenantProductvariationDataById.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfacebookpagesdata.sql" />
+    <Build Include="dbo\Tables\SystemCountryRegionsAreas.sql" />
+    <Build Include="dbo\Tables\SystemCountryRegions.sql" />
+    <Build Include="dbo\Tables\Productcategorygroup.sql" />
+    <Build Include="dbo\Tables\Socialpesaadverts.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemstaffdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductcategorygroupdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductcategorygroupdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemproductcategorygroupdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getdukawaremallproductvariationdatabycategorygroup.sql" />
+    <Build Include="dbo\Tables\Systemmodules.sql" />
+    <Build Include="dbo\Tables\Communicationtemplates.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemmodulesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemcommunicationtemplatedata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemmodulesdatabymoduleid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemmodulesdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedatabymodule.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedata.sql" />
+    <Build Include="dbo\Tables\Fortysevennewsblogtags.sql" />
+    <Build Include="dbo\Tables\Fortysevennewsblogs.sql" />
+    <Build Include="dbo\Tables\Fortysevennewsblogparagraphs.sql" />
+    <Build Include="dbo\Tables\Fortysevennewsblogimages.sql" />
+    <Build Include="dbo\Tables\BlogCategory.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Updatesystemblogdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ResetuserpasswordpostData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemblogtagdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemblogparagraphdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemblogdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemblogcategorydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RegisterLoyaltyFormulaData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemstaffdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogtagdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogparagraphdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogdetaildatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogdatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemblogcategorydatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetSystemBlogCategorydata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemfortysevennewsblogdetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getallproductvariationdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_DefaultThisTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_DeactivateorDeleteTableColumnData.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcommunicationtemplatedatabynameandmodule.sql" />
+    <Build Include="dbo\Tables\Orderdetailitemdata.sql" />
+    <Build Include="dbo\Tables\Orderdetaildata.sql" />
+    <Build Include="dbo\Functions\fn_ToBase36.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Registersystemproductorderdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsingleproductvariationdata.sql" />
+    <Build Include="dbo\Sequences\sq_PaymentTxnID.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsingletenantproductvariationdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Gettenantorderdetaildatabyid.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Gettenantorderdetaildata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Getsystemcustomersdata.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿CREATE TABLE [dbo].[ShiftPurchasesItems] (
+    [PurchaseItemId]       BIGINT          IDENTITY (1, 1) NOT NULL,
+    [PurchaseId]           BIGINT          NOT NULL,
+    [ProductVariationId]   BIGINT          NOT NULL,
+    [TankId]               BIGINT          NOT NULL,
+    [DipsBeforeOffloading] DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseQuantity]     DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [DipsAfterOffloading]  DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [ExpectedQuantity]     DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [Gainloss]             DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PercentGainloss]      DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchasePrice]        DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseTax]          DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseDiscount]     DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseGTotal]       DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseNTotal]       DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [PurchaseTaxAmount]    DECIMAL (18, 2) DEFAULT ((0)) NOT NULL,
+    [Extra]                VARCHAR (100)   NULL,
+    [Extra1]               VARCHAR (100)   NULL,
+    [Extra2]               VARCHAR (100)   NULL,
+    [Extra3]               VARCHAR (100)   NULL,
+    [Extra4]               VARCHAR (100)   NULL,
+    [Extra5]               VARCHAR (100)   NULL,
+    [Extra6]               VARCHAR (100)   NULL,
+    [Extra7]               VARCHAR (100)   NULL,
+    [Extra8]               VARCHAR (100)   NULL,
+    [Extra9]               VARCHAR (100)   NULL,
+    [Extra10]              VARCHAR (100)   NULL,
+    [Createdby]            BIGINT          NOT NULL,
+    [Modifiedby]           BIGINT          NOT NULL,
+    [Datemodified]         DATETIME        NOT NULL,
+    [Datecreated]          DATETIME        NOT NULL,
+    PRIMARY KEY CLUSTERED ([PurchaseItemId] ASC)
+);
+
+
+

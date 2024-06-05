@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[LoyaltySettings] (
+    [LoyaltysettId]              BIGINT         IDENTITY (1, 1) NOT NULL,
+    [NumberFormat]               VARCHAR (50)   NOT NULL,
+    [RoundofDecimals]            INT            NOT NULL,
+    [CeilorFloor]                VARCHAR (50)   NOT NULL,
+    [PointsAwardLimitType]       VARCHAR (25)   NOT NULL,
+    [NoOfTransactionPerDay]      INT            NOT NULL,
+    [AmountPerDay]               FLOAT (53)     NOT NULL,
+    [IsApprovalOn]               BIT            NOT NULL,
+    [CollisionRule]              NVARCHAR (215) NOT NULL,
+    [SalesRangeStartDay]         INT            NOT NULL,
+    [DelayedorInstant]           NVARCHAR (215) NOT NULL,
+    [AzureCronJobCycleMinutes]   INT            NOT NULL,
+    [ConsecutiveTransTimeMin]    INT            NOT NULL,
+    [MinRedeemPoints]            INT            NULL,
+    [VoucherUse]                 VARCHAR (50)   NULL,
+    [DaysToDeactivateNoTransAcc] INT            NULL,
+    [ApplyLoyaltySettings]       BIT            NOT NULL,
+    [PeriodApplicable]           VARCHAR (30)   NOT NULL,
+    [Createdby]                  BIGINT         NULL,
+    [Modifiedby]                 BIGINT         NULL,
+    [DateCreated]                DATETIME       NULL,
+    [DateModified]               DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([LoyaltysettId] ASC)
+);
+

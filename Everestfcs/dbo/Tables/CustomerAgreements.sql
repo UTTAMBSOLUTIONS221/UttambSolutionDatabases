@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[CustomerAgreements] (
+    [AgreementId]    BIGINT        IDENTITY (1, 1) NOT NULL,
+    [CustomerId]     BIGINT        NOT NULL,
+    [GroupingId]     BIGINT        NOT NULL,
+    [AgreemettypeId] BIGINT        NOT NULL,
+    [PriceListId]    BIGINT        NOT NULL,
+    [DiscountListId] BIGINT        NOT NULL,
+    [BillingBasis]   VARCHAR (50)  DEFAULT ('Consumed') NOT NULL,
+    [Descriptions]   VARCHAR (200) NULL,
+    [AgreementDoc]   VARCHAR (200) NULL,
+    [Notes]          VARCHAR (400) NULL,
+    [Hasgroup]       BIT           DEFAULT ((0)) NOT NULL,
+    [HasOverdraft]   BIT           DEFAULT ((0)) NOT NULL,
+    [IsActive]       BIT           DEFAULT ((1)) NOT NULL,
+    [IsDeleted]      BIT           DEFAULT ((0)) NOT NULL,
+    [Createdby]      BIGINT        NULL,
+    [Modifiedby]     BIGINT        NULL,
+    [Datecreated]    DATETIME      NULL,
+    [Datemodified]   DATETIME      NULL,
+    PRIMARY KEY CLUSTERED ([AgreementId] ASC),
+    FOREIGN KEY ([AgreemettypeId]) REFERENCES [dbo].[AgreementTypes] ([AgreemettypeId]),
+    FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customers] ([CustomerId]),
+    FOREIGN KEY ([DiscountListId]) REFERENCES [dbo].[DiscountList] ([DiscountListId]),
+    FOREIGN KEY ([GroupingId]) REFERENCES [dbo].[LoyaltyGroupings] ([GroupingId]),
+    FOREIGN KEY ([PriceListId]) REFERENCES [dbo].[PriceList] ([PriceListId])
+);
+
