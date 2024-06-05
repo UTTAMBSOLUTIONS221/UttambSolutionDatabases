@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "UttambSolutionDatabases", "UttambSolutionDatabases\UttambSolutionDatabases.sqlproj", "{443F8C3B-754B-47B4-8F70-7E03916128AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443F8C3B-754B-47B4-8F70-7E03916128AD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DCD573B-F290-4DD8-807A-F631AF6AB054}
+	EndGlobalSection
+EndGlobal
